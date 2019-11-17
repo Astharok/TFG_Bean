@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="TFG_BeanPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>beans.Conversaciones</class>
+    <class>beans.HistorialesEquipos</class>
+    <class>beans.Usuarios</class>
+    <class>beans.Equipos</class>
+    <class>beans.Mensajes</class>
+    <class>beans.Tarifas</class>
+    <class>beans.GruposUsuarios</class>
+    <class>beans.GruposUsuariosAvisos</class>
+    <class>beans.Avisos</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://192.168.2.200:3306/fctdatabase?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.user" value="FCTAdmin"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="83vS4ZnWnQzzwk8M"/>
+    </properties>
+  </persistence-unit>
+</persistence>
