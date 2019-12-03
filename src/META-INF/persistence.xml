@@ -11,6 +11,8 @@
     <class>beans.GruposUsuarios</class>
     <class>beans.GruposUsuariosAvisos</class>
     <class>beans.Avisos</class>
+    <class>beans.Sesiones</class>
+    <class>beans.Recargas</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://192.168.2.200:3306/fctdatabase?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="FCTAdmin"/>

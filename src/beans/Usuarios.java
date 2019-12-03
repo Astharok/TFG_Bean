@@ -37,8 +37,12 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Usuarios.findByApodo", query = "SELECT u FROM Usuarios u WHERE u.apodo = :apodo")
     , @NamedQuery(name = "Usuarios.findByPassword", query = "SELECT u FROM Usuarios u WHERE u.password = :password")
     , @NamedQuery(name = "Usuarios.findByEmail", query = "SELECT u FROM Usuarios u WHERE u.email = :email")
-    , @NamedQuery(name = "Usuarios.findByTelefono", query = "SELECT u FROM Usuarios u WHERE u.telefono = :telefono")})
+    , @NamedQuery(name = "Usuarios.findByTelefono", query = "SELECT u FROM Usuarios u WHERE u.telefono = :telefono")
+    , @NamedQuery(name = "Usuarios.findBySaldo", query = "SELECT u FROM Usuarios u WHERE u.saldo = :saldo")})
 public class Usuarios implements Serializable {
+
+    @OneToMany(mappedBy = "iDUsuarioFK")
+    private Collection<Recargas> recargasCollection;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -60,6 +64,11 @@ public class Usuarios implements Serializable {
     private String email;
     @Column(name = "Telefono")
     private String telefono;
+    @Basic(optional = false)
+    @Column(name = "Saldo")
+    private double saldo;
+    @OneToMany(mappedBy = "iDUsuarioFK")
+    private Collection<Sesiones> sesionesCollection;
     @OneToMany(mappedBy = "iDUsuarioFK")
     private Collection<HistorialesEquipos> historialesEquiposCollection;
     @OneToMany(mappedBy = "iDUsuarioFK")
@@ -75,10 +84,11 @@ public class Usuarios implements Serializable {
         this.iDUsuario = iDUsuario;
     }
 
-    public Usuarios(Integer iDUsuario, String apodo, String password) {
+    public Usuarios(Integer iDUsuario, String apodo, String password, double saldo) {
         this.iDUsuario = iDUsuario;
         this.apodo = apodo;
         this.password = password;
+        this.saldo = saldo;
     }
 
     public Integer getIDUsuario() {
@@ -137,6 +147,23 @@ public class Usuarios implements Serializable {
         this.telefono = telefono;
     }
 
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    @XmlTransient
+    public Collection<Sesiones> getSesionesCollection() {
+        return sesionesCollection;
+    }
+
+    public void setSesionesCollection(Collection<Sesiones> sesionesCollection) {
+        this.sesionesCollection = sesionesCollection;
+    }
+
     @XmlTransient
     public Collection<HistorialesEquipos> getHistorialesEquiposCollection() {
         return historialesEquiposCollection;
@@ -185,7 +212,16 @@ public class Usuarios implements Serializable {
 
     @Override
     public String toString() {
-        return "bean.Usuarios[ iDUsuario=" + iDUsuario + " ]";
+        return "beans.Usuarios[ iDUsuario=" + iDUsuario + " ]";
+    }
+
+    @XmlTransient
+    public Collection<Recargas> getRecargasCollection() {
+        return recargasCollection;
+    }
+
+    public void setRecargasCollection(Collection<Recargas> recargasCollection) {
+        this.recargasCollection = recargasCollection;
     }
     
 }
