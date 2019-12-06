@@ -45,7 +45,7 @@ public class Mensajes implements Serializable {
     @Column(name = "Texto_Mensaje")
     private String textoMensaje;
     @Column(name = "Fecha")
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date fecha;
     @JoinColumn(name = "ID_Conversacion_FK", referencedColumnName = "ID_Conversacion")
     @ManyToOne
@@ -123,7 +123,7 @@ public class Mensajes implements Serializable {
 
     @Override
     public String toString() {
-        return "bean.Mensajes[ iDMensaje=" + iDMensaje + " ]";
+        return "beans.Mensajes[ iDMensaje=" + iDMensaje + " ]";
     }
     
 }

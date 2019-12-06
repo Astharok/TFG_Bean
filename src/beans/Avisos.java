@@ -47,7 +47,7 @@ public class Avisos implements Serializable {
     @Column(name = "Texto")
     private String texto;
     @Column(name = "Fecha")
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date fecha;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "iDAvisoFK")
     private Collection<GruposUsuariosAvisos> gruposUsuariosAvisosCollection;
@@ -114,7 +114,7 @@ public class Avisos implements Serializable {
 
     @Override
     public String toString() {
-        return "bean.Avisos[ iDAviso=" + iDAviso + " ]";
+        return "beans.Avisos[ iDAviso=" + iDAviso + " ]";
     }
     
 }

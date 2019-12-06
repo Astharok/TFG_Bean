@@ -109,7 +109,7 @@ public class Tarifas implements Serializable {
 
     @Override
     public String toString() {
-        return "bean.Tarifas[ iDTarifa=" + iDTarifa + " ]";
+        return "beans.Tarifas[ iDTarifa=" + iDTarifa + " ]";
     }
     
 }

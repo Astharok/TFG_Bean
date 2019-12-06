@@ -97,7 +97,7 @@ public class GruposUsuariosAvisos implements Serializable {
 
     @Override
     public String toString() {
-        return "bean.GruposUsuariosAvisos[ iDGrupoUsuariosAviso=" + iDGrupoUsuariosAviso + " ]";
+        return "beans.GruposUsuariosAvisos[ iDGrupoUsuariosAviso=" + iDGrupoUsuariosAviso + " ]";
     }
     
 }

@@ -41,9 +41,6 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Usuarios.findBySaldo", query = "SELECT u FROM Usuarios u WHERE u.saldo = :saldo")})
 public class Usuarios implements Serializable {
 
-    @OneToMany(mappedBy = "iDUsuarioFK")
-    private Collection<Recargas> recargasCollection;
-
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -76,6 +73,8 @@ public class Usuarios implements Serializable {
     @JoinColumn(name = "ID_Grupo_Usuario_FK", referencedColumnName = "ID_Grupo_Usuarios")
     @ManyToOne
     private GruposUsuarios iDGrupoUsuarioFK;
+    @OneToMany(mappedBy = "iDUsuarioFK")
+    private Collection<Recargas> recargasCollection;
 
     public Usuarios() {
     }
@@ -190,6 +189,15 @@ public class Usuarios implements Serializable {
         this.iDGrupoUsuarioFK = iDGrupoUsuarioFK;
     }
 
+    @XmlTransient
+    public Collection<Recargas> getRecargasCollection() {
+        return recargasCollection;
+    }
+
+    public void setRecargasCollection(Collection<Recargas> recargasCollection) {
+        this.recargasCollection = recargasCollection;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -213,15 +221,6 @@ public class Usuarios implements Serializable {
     @Override
     public String toString() {
         return "beans.Usuarios[ iDUsuario=" + iDUsuario + " ]";
-    }
-
-    @XmlTransient
-    public Collection<Recargas> getRecargasCollection() {
-        return recargasCollection;
-    }
-
-    public void setRecargasCollection(Collection<Recargas> recargasCollection) {
-        this.recargasCollection = recargasCollection;
     }
     
 }

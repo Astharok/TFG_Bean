@@ -43,10 +43,10 @@ public class HistorialesEquipos implements Serializable {
     @Column(name = "ID_Historial_Equipo")
     private Integer iDHistorialEquipo;
     @Column(name = "Fecha_Inicio")
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date fechaInicio;
     @Column(name = "Fecha Fin")
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date fechaFin;
     @JoinColumn(name = "ID_Equipo_FK", referencedColumnName = "ID_Equipo")
     @ManyToOne
@@ -124,7 +124,7 @@ public class HistorialesEquipos implements Serializable {
 
     @Override
     public String toString() {
-        return "bean.HistorialesEquipos[ iDHistorialEquipo=" + iDHistorialEquipo + " ]";
+        return "beans.HistorialesEquipos[ iDHistorialEquipo=" + iDHistorialEquipo + " ]";
     }
     
 }

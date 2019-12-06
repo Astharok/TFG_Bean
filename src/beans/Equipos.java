@@ -98,7 +98,7 @@ public class Equipos implements Serializable {
 
     @Override
     public String toString() {
-        return "bean.Equipos[ iDEquipo=" + iDEquipo + " ]";
+        return "beans.Equipos[ iDEquipo=" + iDEquipo + " ]";
     }
     
 }

@@ -44,7 +44,7 @@ public class Conversaciones implements Serializable {
     @Column(name = "ID_Conversacion")
     private Integer iDConversacion;
     @Column(name = "Fecha_Inicio")
-    @Temporal(TemporalType.DATE)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date fechaInicio;
     @Column(name = "Fecha_Fin")
     @Temporal(TemporalType.DATE)
@@ -114,7 +114,7 @@ public class Conversaciones implements Serializable {
 
     @Override
     public String toString() {
-        return "bean.Conversaciones[ iDConversacion=" + iDConversacion + " ]";
+        return "beans.Conversaciones[ iDConversacion=" + iDConversacion + " ]";
     }
     
 }

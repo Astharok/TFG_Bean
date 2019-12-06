@@ -123,7 +123,7 @@ public class GruposUsuarios implements Serializable {
 
     @Override
     public String toString() {
-        return "bean.GruposUsuarios[ iDGrupoUsuarios=" + iDGrupoUsuarios + " ]";
+        return "beans.GruposUsuarios[ iDGrupoUsuarios=" + iDGrupoUsuarios + " ]";
     }
     
 }
