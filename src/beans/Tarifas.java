@@ -42,8 +42,9 @@ public class Tarifas implements Serializable {
     private Integer iDTarifa;
     @Column(name = "Nombre")
     private String nombre;
+    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "Precio_por_hora")
-    private Long precioporhora;
+    private Double precioporhora;
     @OneToMany(mappedBy = "iDTarifaFK")
     private Collection<GruposUsuarios> gruposUsuariosCollection;
 
@@ -70,11 +71,11 @@ public class Tarifas implements Serializable {
         this.nombre = nombre;
     }
 
-    public Long getPrecioporhora() {
+    public Double getPrecioporhora() {
         return precioporhora;
     }
 
-    public void setPrecioporhora(Long precioporhora) {
+    public void setPrecioporhora(Double precioporhora) {
         this.precioporhora = precioporhora;
     }
 
