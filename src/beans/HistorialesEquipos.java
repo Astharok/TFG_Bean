@@ -45,7 +45,7 @@ public class HistorialesEquipos implements Serializable {
     @Column(name = "Fecha_Inicio")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaInicio;
-    @Column(name = "Fecha Fin")
+    @Column(name = "Fecha_Fin")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaFin;
     @JoinColumn(name = "ID_Equipo_FK", referencedColumnName = "ID_Equipo")
