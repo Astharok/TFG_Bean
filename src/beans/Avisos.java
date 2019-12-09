@@ -34,6 +34,7 @@ import javax.xml.bind.annotation.XmlTransient;
 @NamedQueries({
     @NamedQuery(name = "Avisos.findAll", query = "SELECT a FROM Avisos a")
     , @NamedQuery(name = "Avisos.findByIDAviso", query = "SELECT a FROM Avisos a WHERE a.iDAviso = :iDAviso")
+    , @NamedQuery(name = "Avisos.findByTitulo", query = "SELECT a FROM Avisos a WHERE a.titulo = :titulo")
     , @NamedQuery(name = "Avisos.findByTexto", query = "SELECT a FROM Avisos a WHERE a.texto = :texto")
     , @NamedQuery(name = "Avisos.findByFecha", query = "SELECT a FROM Avisos a WHERE a.fecha = :fecha")})
 public class Avisos implements Serializable {
@@ -44,6 +45,8 @@ public class Avisos implements Serializable {
     @Basic(optional = false)
     @Column(name = "ID_Aviso")
     private Integer iDAviso;
+    @Column(name = "Titulo")
+    private String titulo;
     @Column(name = "Texto")
     private String texto;
     @Column(name = "Fecha")
@@ -65,6 +68,14 @@ public class Avisos implements Serializable {
 
     public void setIDAviso(Integer iDAviso) {
         this.iDAviso = iDAviso;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
     public String getTexto() {
